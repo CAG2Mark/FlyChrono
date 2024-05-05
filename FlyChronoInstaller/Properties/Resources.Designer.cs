@@ -111,6 +111,21 @@ namespace FlyChronoInstaller.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}{\f1\fnil Segoe UI;}{\f2\fnil\fcharset0 Consolas;}}
+        ///{\colortbl ;\red0\green0\blue255;}
+        ///{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+        ///\pard\sa180\b\f0\fs28\lang9 GNU GENERAL PUBLIC LICENSE\par
+        ///\b0\fs24 Version 3, 29 June 2007\par
+        ///Copyright \&apos;a9 2007 Free Software Foundation, Inc. &lt;{{\field{\*\fldinst{HYPERLINK &quot;https://fsf.org/&quot;}}{\fldrslt{https://fsf.org/\ul0\cf0}}}}\f0\fs24 &gt;\par
+        ///Everyone is permitted to co [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string license {
+            get {
+                return ResourceManager.GetString("license", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap minimize {
@@ -137,31 +152,6 @@ namespace FlyChronoInstaller.Properties {
             get {
                 object obj = ResourceManager.GetObject("SourceSansPro_Regular", resourceCulture);
                 return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap studio_logo {
-            get {
-                object obj = ResourceManager.GetObject("studio_logo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}
-        ///{\*\generator Riched20 10.0.17134}\viewkind4\uc1 
-        ///\pard\sa200\sl276\slmult1\b\f0\fs40\lang9 FLYAPPS END USER LICENSE AGREEMENT\b0\fs22\par
-        ///All FlyApps applications are owned by FlyApps. By using these applications, you agree to be bound by a legal contract of which is displayed below.\par
-        ///\par
-        ///\b 1) COPYRIGHT\b0\par
-        ///All images, text and files contained within this package (ie. content in the install package yo [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string studiolicense {
-            get {
-                return ResourceManager.GetString("studiolicense", resourceCulture);
             }
         }
     }

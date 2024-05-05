@@ -236,6 +236,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Resources\license.rtf" />
     <Resource Include="Resources\Fonts\SourceSansPro-LightIt.otf" />
     <Resource Include="Resources\Fonts\SourceSansPro-Bold.otf" />
     <Resource Include="Resources\Fonts\SourceSansPro-ExtraLight.otf" />

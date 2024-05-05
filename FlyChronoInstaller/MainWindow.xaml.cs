@@ -55,7 +55,7 @@ namespace FlyChronoInstaller
             set { _statusText = value; OnPropertyChanged(); }
         }
 
-        public string appVersion => "2.0.1";
+        public string appVersion => "OpenSource-Beta-1";
         public double givenDownloadSize => 2790;
 
         public string registryDirec => "Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall";
@@ -67,7 +67,7 @@ namespace FlyChronoInstaller
         public string icoPath => @"C:\CAG2 Software\FlyChrono\FlyChronoIcon.ico";
         public string uninstallPath => @"C:\CAG2 Software\Uninstalls\FlyChronouninstaller.exe";
 
-        public string downloadUri => "https://flyapps.weebly.com/uploads/2/3/8/8/23886508/flychronolibs.zip";
+        public string downloadUri => "https://github.com/CAG2Mark/FlyChrono/raw/90d3e867f59b6b326553557f563b8645e6b0c072/dist/flychronolibs.zip";
         public string downloadPath => @"C:\CAG2 Software\Installer Temporary Files\chronolibs.zip";
 
 
@@ -76,7 +76,7 @@ namespace FlyChronoInstaller
 
             InitializeComponent();
 
-            var stream = new MemoryStream(ASCIIEncoding.Default.GetBytes(Properties.Resources.studiolicense));
+            var stream = new MemoryStream(ASCIIEncoding.Default.GetBytes(Properties.Resources.license));
             LicenseRichTextBox.Selection.Load(stream, DataFormats.Rtf);
 
         }
@@ -143,6 +143,8 @@ namespace FlyChronoInstaller
             tryCreateDirectory(tempFolder);
 
             WebClient client = new WebClient();
+            client.Headers.Add("user-agent", "none");
+
             client.DownloadFileAsync(new Uri(downloadUri), downloadPath);
 
             client.DownloadProgressChanged += (o, e) =>
@@ -172,7 +174,6 @@ namespace FlyChronoInstaller
 
             client.DownloadFileCompleted += (o, e) =>
             {
-
                 if (e.Cancelled)
                 {
                     statusText = "Download failed";

@@ -82,12 +82,18 @@ namespace FlyChrono2.Views
             var licenseWindow = new License();
             licenseWindow.ShowDialog();
         }
+        private void ShowSourceCode(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://github.com/CAG2Mark/FlyChrono");
+        }
 
         private void CheckUpdates(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("Not yet implemented for the open source version.");
+            /*
             var version =
                 new WebClient().DownloadString(
-                    "https://flyapps.weebly.com/uploads/2/3/8/8/23886508/flychrono2version.txt");
+                    "TODO");
             if (version != Properties.Settings.Default.ApplicationVersion)
             {
                 if (MessageBox.Show("New version found: " + version + ". Install?", "Update Found",
@@ -104,6 +110,7 @@ namespace FlyChrono2.Views
             {
                 MessageBox.Show("No new version found.");
             }
+            */
         }
     }
 }

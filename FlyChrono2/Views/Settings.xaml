@@ -321,7 +321,7 @@
                             <StackPanel Orientation="Horizontal">
                                 <Button Width="170" HorizontalAlignment="Left" Margin="8" Click="CheckUpdates">Check for updates</Button>
                                 <Button Width="140" HorizontalAlignment="Left" Margin="8 8 8 8" Click="ShowLicense">Show License</Button>
-                                <Button Width="140" HorizontalAlignment="Left" Margin="8 8 8 8" Click="ShowLicense">Source Code</Button>
+                                <Button Width="140" HorizontalAlignment="Left" Margin="8 8 8 8" Click="ShowSourceCode">Source Code</Button>
                             </StackPanel>
 
                             <TextBlock Margin="8 4 4 4" HorizontalAlignment="Left" FontSize="13" Foreground="#AA000000" TextWrapping="Wrap" Height="Auto">This application uses the FSUIPC Client DLL for .NET by Paul Henty.</TextBlock>

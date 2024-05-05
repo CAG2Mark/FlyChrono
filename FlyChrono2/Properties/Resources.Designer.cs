@@ -99,5 +99,20 @@ namespace FlyChrono2.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}{\f1\fnil Segoe UI;}{\f2\fnil\fcharset0 Consolas;}}
+        ///{\colortbl ;\red0\green0\blue255;}
+        ///{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+        ///\pard\sa180\b\f0\fs28\lang9 GNU GENERAL PUBLIC LICENSE\par
+        ///\b0\fs24 Version 3, 29 June 2007\par
+        ///Copyright \&apos;a9 2007 Free Software Foundation, Inc. &lt;{{\field{\*\fldinst{HYPERLINK &quot;https://fsf.org/&quot;}}{\fldrslt{https://fsf.org/\ul0\cf0}}}}\f0\fs24 &gt;\par
+        ///Everyone is permitted to co [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string license {
+            get {
+                return ResourceManager.GetString("license", resourceCulture);
+            }
+        }
     }
 }

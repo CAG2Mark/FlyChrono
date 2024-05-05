@@ -195,9 +195,6 @@
         <WindowChrome ResizeBorderThickness="5" GlassFrameThickness="0,0.1,0,0" CaptionHeight="40"/>
     </WindowChrome.WindowChrome>
     <Grid>
-        <Grid.Resources>
-            <BitmapImage x:Key="Logo" UriSource="pack://application:,,,/Resources/studio logo.png"/>
-        </Grid.Resources>
         <Grid.Style>
             <Style>
                 <Style.Triggers>

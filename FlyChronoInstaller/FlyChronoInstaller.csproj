@@ -113,6 +113,7 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.manifest" />
@@ -120,7 +121,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Resource Include="Resources\studiolicense.rtf" />
+    <Resource Include="Resources\license.rtf" />
     <Resource Include="Resources\SourceSansPro-Light.otf" />
     <Resource Include="Resources\SourceSansPro-Regular.otf" />
   </ItemGroup>
@@ -132,9 +133,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\minimize.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\studio logo.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="IWshRuntimeLibrary">
