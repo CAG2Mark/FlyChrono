@@ -151,17 +151,10 @@
     <Resource Include="projectliveicon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\FlyCentralLogo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\airportsExtra.csv" />
-    <None Include="Resources\FlyCentralUninstaller.exe" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\FlyCentralNew.exe" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\FlyChronoUninstaller.exe" />

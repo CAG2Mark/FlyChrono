@@ -67,9 +67,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomControls\CustomDatePicker.xaml.cs">
-      <DependentUpon>CustomDatePicker.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\ExceptionWindow.xaml.cs">
       <DependentUpon>ExceptionWindow.xaml</DependentUpon>
     </Compile>
@@ -88,7 +85,6 @@
     <Compile Include="BackEnd\ViewModels\AlarmViewModel.cs" />
     <Compile Include="BackEnd\ViewModels\FlightViewModel.cs" />
     <Compile Include="BackEnd\ViewModels\ValueConverters.cs" />
-    <Compile Include="BackEnd\Win32Processes.cs" />
     <Compile Include="CustomControls\AirportFinder.xaml.cs">
       <DependentUpon>AirportFinder.xaml</DependentUpon>
     </Compile>
@@ -129,10 +125,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CustomControls\AlarmPanel.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="CustomControls\CustomDatePicker.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
