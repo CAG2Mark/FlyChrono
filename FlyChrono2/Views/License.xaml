@@ -1,0 +1,112 @@
+﻿<Window x:Class="FlyChrono2.Views.License"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlyChrono2.Views"
+        mc:Ignorable="d"
+        Title="License" Height="450" Width="800" Background="{StaticResource Light1Brush}"
+        ResizeMode="CanResize" ShowInTaskbar="False"
+        WindowStartupLocation="CenterScreen" x:Name="Window" DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="34" UseAeroCaptionButtons="False"></WindowChrome>
+    </WindowChrome.WindowChrome>
+
+    <Window.Resources>
+        <Style TargetType="RichTextBox">
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            
+            <Setter Property="FontFamily" Value="{StaticResource SourceSansProRegular}"></Setter>
+            <Setter Property="Foreground" Value="{StaticResource Dark0Brush}"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="Background" Value="{StaticResource Light0Brush}"></Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RichTextBox">
+                        <Border x:Name="Border" CornerRadius="4" Background="#0A000000" BorderThickness="1.5" BorderBrush="{StaticResource BorderColorBrush}">
+                            <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" Margin="4 0 0 0" x:Name="PART_ContentHost">
+                            </ScrollViewer>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource BorderColorDark1Brush}"></Setter>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource BorderColorDark2Brush}"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.Style>
+            <Style>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding WindowState, RelativeSource={RelativeSource AncestorType={x:Type local:License}}}" Value="Maximized">
+                        <Setter Property="FrameworkElement.Margin" Value="7"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="34"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" Background="{StaticResource FancyRedBrush}">
+            <DockPanel.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border CornerRadius="5" x:Name="Bd" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#1AE9E9E9" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="#2AE4E4E4" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DockPanel.Resources>
+            <TextBlock Text="{Binding ElementName=Window, Path=Title}"
+                       FontFamily="{StaticResource SourceSansProRegular}"
+                       Foreground="White"
+                       FontSize="18"
+                       VerticalAlignment="Center"
+                       Margin="10 0 0 0"></TextBlock>
+
+            <Button AutomationProperties.Name="Close Button"  DockPanel.Dock="Right" Height="28" Width="28" HorizontalAlignment="Right" Margin="2" Click="Close">
+                <Path Stretch="Fill" Height="20" Width="20" Data="M28.45,25.86L18.59,16l9.86-9.86c0.73-0.73,0.73-1.93,0-2.66v0c-0.73-0.73-1.93-0.73-2.66,0l-9.86,9.86           L6.21,3.62c-0.73-0.73-1.93-0.73-2.66,0v0c-0.73,0.73-0.73,1.93,0,2.66L13.26,16l-9.72,9.72c-0.73,0.73-0.73,1.93,0,2.66           s1.93,0.73,2.66,0l9.72-9.72l9.86,9.86c0.73,0.73,1.93,0.73,2.66,0C29.18,27.79,29.18,26.59,28.45,25.86z" Fill="White"/>
+            </Button>
+
+
+        </DockPanel>
+
+        <Grid x:Name="MainGrid" Grid.Row="1">
+            <RichTextBox VerticalScrollBarVisibility="Auto" Margin="16" x:Name="LicenseRichTextBox" IsReadOnly="True"></RichTextBox>
+        </Grid>
+
+        <Border Grid.Row="2" Background="{StaticResource Light4Brush}"></Border>
+        <DockPanel Grid.Row="2" HorizontalAlignment="Right" Background="{StaticResource Light4Brush}">
+            
+            <Button Content="OK" HorizontalAlignment="Left" VerticalAlignment="Center" Width="75" Margin="0 0 15 0" Height="26" Click="Close"/>
+        </DockPanel>
+    </Grid>
+</Window>

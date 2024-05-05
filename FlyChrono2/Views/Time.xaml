@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="FlyChrono2.Views.Time"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlyChrono2.Views"
+             xmlns:customcontrols="clr-namespace:FlyChrono2.CustomControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="{StaticResource Light1Brush}">
+    <Grid VerticalAlignment="Center" Width="Auto" HorizontalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="36"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="36"></RowDefinition>
+            <RowDefinition Height="AUto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" FontFamily="{StaticResource SourceSansProRegularBold}" Margin="0 8 0 0" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">MANUALLY SET TIME</TextBlock>
+
+        <StackPanel Grid.Row="1">
+            <StackPanel  Height="36" Orientation="Horizontal">
+                <customcontrols:NumericUpDown AutomationProperties.Name="Manual Hour Selector" x:Name="CustomHourControl" Width="80" MinValue="0" MaxValue="23" CurrentValue="{Binding CustomHour, Mode=TwoWay}"></customcontrols:NumericUpDown>
+                <TextBlock FontFamily="{StaticResource SourceSansProRegular}" FontSize="24" VerticalAlignment="Center" Margin="2">:</TextBlock>
+                <customcontrols:NumericUpDown AutomationProperties.Name="Manual Minute Selector" x:Name="CustomMinuteControl" Width="80" MinValue="0" MaxValue="59"  CurrentValue="{Binding CustomMinute, Mode=TwoWay}"></customcontrols:NumericUpDown>
+            </StackPanel>
+            <Button Margin="0 4 0 4" Height="30" Command="{Binding SetCustomTimeCommand}">Set Time</Button>
+        </StackPanel>
+
+        <TextBlock Grid.Row="2" FontFamily="{StaticResource SourceSansProRegularBold}" Margin="0 8 0 0" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">OFFSET TIME</TextBlock>
+
+        <StackPanel Grid.Row="3">
+            <StackPanel  Height="36" Orientation="Horizontal">
+                <customcontrols:NumericUpDown AutomationProperties.Name="Offset hour selector" CurrentValue="{Binding PreCustomOffsetHour, Mode=TwoWay}" Width="80" MinValue="-24" MaxValue="24"></customcontrols:NumericUpDown>
+                <TextBlock FontFamily="{StaticResource SourceSansProRegular}" FontSize="20" VerticalAlignment="Center" Margin="2 0 8 0">h</TextBlock>
+                <customcontrols:NumericUpDown AutomationProperties.Name="Offset minute selector" CurrentValue="{Binding PreCustomOffsetMinute, Mode=TwoWay}" Width="80" MinValue="0" MaxValue="59"></customcontrols:NumericUpDown>
+                <TextBlock FontFamily="{StaticResource SourceSansProRegular}" FontSize="20" VerticalAlignment="Center" Margin="2 0 8 0">m</TextBlock>
+            </StackPanel>
+            <Button Margin="0 4 0 4" Height="30" Command="{Binding ApplyOffsetCommand}">Apply Offset</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlyChrono2", "FlyChrono2\FlyChrono2.csproj", "{6495BA1F-24B6-4AA3-8865-92A55ECA8586}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlyChronoInstaller", "FlyChronoInstaller\FlyChronoInstaller.csproj", "{FE857E6C-3E1A-44F5-92C8-874ACB648AAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlyChronoUninstaller", "FlyChronoUninstaller\FlyChronoUninstaller.csproj", "{210D8B52-72A3-4419-97C4-A7EC362996B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6495BA1F-24B6-4AA3-8865-92A55ECA8586}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6495BA1F-24B6-4AA3-8865-92A55ECA8586}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6495BA1F-24B6-4AA3-8865-92A55ECA8586}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6495BA1F-24B6-4AA3-8865-92A55ECA8586}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE857E6C-3E1A-44F5-92C8-874ACB648AAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE857E6C-3E1A-44F5-92C8-874ACB648AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE857E6C-3E1A-44F5-92C8-874ACB648AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE857E6C-3E1A-44F5-92C8-874ACB648AAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{210D8B52-72A3-4419-97C4-A7EC362996B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{210D8B52-72A3-4419-97C4-A7EC362996B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{210D8B52-72A3-4419-97C4-A7EC362996B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{210D8B52-72A3-4419-97C4-A7EC362996B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {685385E8-84FE-49CA-AE23-4EE6590CC591}
+	EndGlobalSection
+EndGlobal

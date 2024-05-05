@@ -1,0 +1,111 @@
+﻿<UserControl x:Class="FlyChrono2.CustomControls.NumericUpDown"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlyChrono2.CustomControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="80"  MaxHeight="30" MinWidth="60" Loaded="UserControl_Loaded"
+             GotFocus="ColorSelectionTextbox_OnGotFocus"
+             LostFocus="ColorSelectionTextbox_OnLostFocus"
+             MouseEnter="ColorSelectionTextbox_OnMouseEnter"
+             MouseLeave="ColorSelectionTextbox_OnMouseLeave">
+    <Grid>
+        <Grid x:Name="MainGrid">
+
+            <Grid.Resources>
+                <Brush x:Key="UniversalBorderColor">#1A000000</Brush>
+
+                <Thickness x:Key="textBoxThickness">1.5,1.5,0,1.5</Thickness>
+                <CornerRadius x:Key="textBoxCornerRadius">4,0,0,4</CornerRadius>
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="FontFamily" Value="{StaticResource SourceSansProRegular}" />
+                    <Setter Property="Padding" Value="5, 0, 5, 1" />
+                    <Setter Property="FontSize" Value="18" />
+                    <Setter Property="Foreground" Value="{StaticResource Dark0Brush}" />
+                    <Setter Property="Background" Value="{StaticResource Light3Brush}" />
+                    <Setter Property="Height" Value="30px" />
+                    <Setter Property="HorizontalContentAlignment" Value="Left" />
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+                    <Setter Property="Text" Value="0" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <!--  -->
+                                <Border Background="#0A000000" BorderThickness="{DynamicResource textBoxThickness}" CornerRadius="{DynamicResource textBoxCornerRadius}" x:Name="Bd"  BorderBrush="{DynamicResource UniversalBorderColor}">
+                                    <ScrollViewer x:Name="PART_ContentHost" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="20" x:Name="RightColumnDefinition"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="NumberTextBox" Grid.Column="0" LostFocus="setValue" GotFocus="setTempValue" PreviewKeyDown="previewKeyPressed"
+                     KeyDown="keyPressed" PreviewTextInput="NumberTextBox_PreviewTextInput"></TextBox>
+            <Grid Grid.Column="1" x:Name="RightGrid" Visibility="Visible">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="15" />
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Height="15" VerticalAlignment="Top" x:Name="IncreaseButton" Click="numberUpPressed" IsTabStop="False">
+                    <Polygon Points="0,5 12,5 6,0" Fill="{StaticResource BorderColorDark2Brush}" Margin="1.5 0 0 0"/>
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="{StaticResource Light4Brush}" />
+                            <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <!--  -->
+                                        <Border BorderBrush="{DynamicResource UniversalBorderColor}"  BorderThickness="0 1.5 1.5 0" CornerRadius="0, 4, 0 0" x:Name="Bd" Background="{TemplateBinding Background}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource Light5Brush}" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource Light6Brush}" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Grid.Row="1" Height="15" VerticalAlignment="Bottom" x:Name="DecreaseButton" Click="numberDownPressed" IsTabStop="False">
+                    <Polygon Points="0,0, 12,0 6,5" Fill="{StaticResource BorderColorDark2Brush}" Margin="1.5 0 0 0"/>
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="{StaticResource Light4Brush}" />
+                            <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <!--  -->
+                                        <Border BorderBrush="{DynamicResource UniversalBorderColor}"  BorderThickness="0 0 1.5 1.5" CornerRadius="0, 0, 4, 0" x:Name="Bd" Background="{TemplateBinding Background}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource Light5Brush}" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource Light6Brush}" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
